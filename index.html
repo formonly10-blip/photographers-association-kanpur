@@ -161,5 +161,27 @@
     <p>© 2026 Photographers Association Kanpur | All Rights Reserved</p>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<script>
+function openImage(src) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+document.querySelectorAll('.grid img, .member img').forEach(img => {
+    img.addEventListener('click', function() {
+        openImage(this.src);
+    });
+});
+</script>
+
 </body>
 </html>
