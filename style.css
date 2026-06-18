@@ -45,7 +45,7 @@ html {
 
 /* SPECIAL COLOR FOR "Association" */
 .highlight {
-    color: #1e73ff;   /* professional blue */
+    color: #1e73ff;
     font-weight: 700;
 }
 
@@ -67,19 +67,35 @@ html {
     color: #1e73ff;
 }
 
-/* MOBILE RESPONSIVE */
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         height: auto;
         padding: 15px;
         gap: 10px;
+        align-items: center;        /* ✅ FIX: centers everything horizontally */
+    }
+
+    .left {
+        flex-direction: column;     /* ✅ FIX: stack logo above brand text */
+        align-items: center;        /* ✅ FIX: center logo and text */
+        text-align: center;
+    }
+
+    .brand {
+        white-space: normal;        /* ✅ FIX: allow text to wrap on small screens */
+        text-align: center;
     }
 
     .right {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
+    }
+
+    .banner-text h1 {
+        font-size: 28px;
     }
 }
 
@@ -154,7 +170,7 @@ section:hover {
     box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
-/* ================= ABOUT (KEEP YOUR STYLE BUT FITTED) ================= */
+/* ================= ABOUT ================= */
 #about {
     text-align: center;
 }
@@ -243,20 +259,7 @@ footer {
     margin-top: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    .banner-text h1 {
-        font-size: 28px;
-    }
-}
 /* ================= LIGHTBOX ================= */
-
 .grid img,
 .member img {
     cursor: pointer;
