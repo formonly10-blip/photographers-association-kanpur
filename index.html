@@ -35,13 +35,11 @@
 </html>
 
 <!-- ================= BANNER ================= -->
+<!-- ================= BANNER ================= -->
 <section class="banner">
-
     <div class="banner-text">
-        <h1></h1>
         
     </div>
-
 </section>
 
 <!-- ================= ABOUT ================= -->
@@ -239,6 +237,25 @@ document.querySelectorAll('.grid img, .member img').forEach(img => {
         openImage(this.src);
     });
 });
+</script>
+<script>
+const bannerImages = [
+    "images/D1.jpg",
+    "images/D2.jpg",
+    "images/D3.jpg",
+    "images/D4.jpg",
+    "images/D5.jpg",
+    "images/D6.jpg"
+];
+
+let currentImage = 0;
+const banner = document.querySelector(".banner");
+
+setInterval(() => {
+    currentImage = (currentImage + 1) % bannerImages.length;
+    banner.style.backgroundImage =
+        `url('${bannerImages[currentImage]}')`;
+}, 4000);
 </script>
 
 </body>
