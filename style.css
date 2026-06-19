@@ -18,27 +18,23 @@ html {
     align-items: center;
     padding: 0 15px;
     border-bottom: 1px solid #eee;
-
     position: sticky;
     top: 0;
     z-index: 9999;
 }
 
-/* LEFT SIDE */
 .left {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
-/* LOGO */
 .logo {
     height: 55px;
     width: auto;
     display: block;
 }
 
-/* BRAND TEXT */
 .brand {
     font-size: 18px;
     font-weight: 600;
@@ -47,13 +43,11 @@ html {
     text-align: center;
 }
 
-/* SPECIAL COLOR FOR "Association" */
 .highlight {
     color: #1e73ff;
     font-weight: 700;
 }
 
-/* RIGHT MENU */
 .right {
     display: flex;
     gap: 22px;
@@ -78,100 +72,85 @@ html {
         height: auto;
         padding: 15px;
         gap: 10px;
-        align-items: center;        /* ✅ FIX: centers everything horizontally */
+        align-items: center;
     }
-
     .left {
-        flex-direction: column;     /* ✅ FIX: stack logo above brand text */
-        align-items: center;        /* ✅ FIX: center logo and text */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
-
     .brand {
-        white-space: normal;        /* ✅ FIX: allow text to wrap on small screens */
+        white-space: normal;
         text-align: center;
     }
-
     .right {
         flex-wrap: wrap;
         justify-content: center;
         gap: 15px;
     }
-
-    .banner-text h1 {
-        font-size: 28px;
-    }
 }
 
-.title {
-    flex: 1;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-/* NAV */
-.nav a {
-    color: #111111;
-    margin-left: 18px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.nav a:hover {
-    color: #050505;
-    text-shadow: 0 0 10px rgba(209, 255, 255, 0.8);
-}
-
-/* ================= BANNER ================= */
-
-
+/* ================= BANNER SLIDER ================= */
 .banner {
     height: 100vh;
     width: 100%;
     position: relative;
+    overflow: hidden;
+}
 
-    background-image: url("images/D1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+.slider-track {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: background-image 1s ease-in-out;
+    width: 600%;
+    height: 100%;
+    transition: transform 0.8s ease-in-out;
 }
 
-.banner-text {
-    text-align: center;
-    color: white;
-    z-index: 2;
+.slide {
+    width: calc(100% / 6);
+    height: 100%;
+    flex-shrink: 0;
 }
 
-.banner-text h1 {
-    font-size: 50px;
-    color: white;
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
-.banner-text p {
-    color: white;
-    font-size: 20px;
+.slider-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
 }
 
-/* ================= SECTIONS (FULL 3D FLOAT EFFECT) ================= */
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.dot.active {
+    background: #ffffff;
+    transform: scale(1.3);
+}
+
+/* ================= SECTIONS ================= */
 section {
     padding: 60px 20px;
     margin: 20px;
-
     background: rgba(255,255,255,0.03);
     backdrop-filter: blur(10px);
-
     border-radius: 15px;
-
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-
     transform: perspective(900px) rotateX(1deg);
     transition: 0.4s ease;
 }
@@ -181,18 +160,15 @@ section:hover {
     box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
-/* ================= ABOUT ================= */
 #about {
     text-align: center;
 }
 
-/* ================= HEADINGS ================= */
 h1, h2 {
-    color: rgb(10, 10, 10);
+    color: rgb(10,10,10);
     text-shadow: 0 0 12px rgba(0,230,230,0.6);
 }
 
-/* ================= PARAGRAPH ================= */
 p {
     color: #050505;
     line-height: 1.8;
@@ -200,7 +176,7 @@ p {
     margin: auto;
 }
 
-/* ================= TEAM + GALLERY + ACTIVITIES 3D CARDS ================= */
+/* ================= TEAM + GALLERY ================= */
 .team-grid,
 .grid,
 .activities-grid {
@@ -211,15 +187,12 @@ p {
     margin-top: 30px;
 }
 
-/* CARD STYLE */
 .member,
 .activity-card {
     background: rgba(255,255,255,0.05);
     border-radius: 12px;
     overflow: hidden;
-
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-
     transition: 0.4s;
 }
 
@@ -227,7 +200,6 @@ p {
 .activity-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 18px 45px rgba(0,0,0,0.8);
-    text-align: center;
 }
 
 .member img,
@@ -237,18 +209,22 @@ p {
     object-fit: cover;
 }
 
+.member h3 {
+    padding: 8px 10px 2px;
+}
+
 .member p,
 .activity-card p {
     padding: 10px;
     font-weight: bold;
 }
 
-/* ================= GALLERY ================= */
 .grid img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 10px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -271,7 +247,6 @@ footer {
 }
 
 /* ================= LIGHTBOX ================= */
-.grid img,
 .member img {
     cursor: pointer;
 }
@@ -294,7 +269,6 @@ footer {
 }
 
 /* ================= MEMBERS TABLE ================= */
-
 #members {
     text-align: center;
 }
@@ -333,7 +307,6 @@ footer {
     #members .members-table {
         font-size: 14px;
     }
-
     #members .members-table th,
     #members .members-table td {
         padding: 10px;

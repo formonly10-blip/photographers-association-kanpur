@@ -4,43 +4,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photographer Association Kanpur</title>
-
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header class="header">
-
-    <!-- LEFT SIDE -->
     <div class="left">
         <img src="images/logo.png" class="logo">
-
         <div class="brand">
             Photographer <span class="highlight">Association</span> Kanpur
         </div>
     </div>
-
-    <!-- RIGHT SIDE MENU -->
     <nav class="right">
-    <a href="#about">About</a>
-    <a href="#activities">Activities</a>
-    <a href="#team">Our Team</a>
-    <a href="#members">Members</a>
-    <a href="#contact">Contact</a>
-</nav>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#team">Our Team</a>
+        <a href="#members">Members</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
-</body>
-</html>
-
 <!-- ================= BANNER ================= -->
-<!-- ================= BANNER ================= -->
-<section class="banner">
-    <div class="banner-text">
-        
+<div class="banner">
+    <div class="slider-track">
+        <div class="slide"><img src="images/D1.jpg" alt="Banner 1"></div>
+        <div class="slide"><img src="images/D2.jpg" alt="Banner 2"></div>
+        <div class="slide"><img src="images/D3.jpg" alt="Banner 3"></div>
+        <div class="slide"><img src="images/D4.jpg" alt="Banner 4"></div>
+        <div class="slide"><img src="images/D5.jpg" alt="Banner 5"></div>
+        <div class="slide"><img src="images/D6.jpg" alt="Banner 6"></div>
     </div>
-</section>
+    <div class="slider-dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+        <span class="dot" onclick="goToSlide(5)"></span>
+    </div>
+</div>
 
 <!-- ================= ABOUT ================= -->
 <section id="about">
@@ -69,60 +73,48 @@
         training sessions to improve skills and creativity among members.
     </p>
     <div class="grid">
-
-        <img src="images/A1.jpg" >
-        <img src="images/A2.jpg" >
-        <img src="images/A3.jpg" >
-        <img src="images/A4.jpg" >
-        <img src="images/A5.jpg" >
-        
-
+        <img src="images/A1.jpg">
+        <img src="images/A2.jpg">
+        <img src="images/A3.jpg">
+        <img src="images/A4.jpg">
+        <img src="images/A5.jpg">
     </div>
-
 </section>
 
 <!-- ================= TEAM ================= -->
 <section id="team">
     <h2>Our Team</h2>
-
     <div class="team-grid">
-
         <div class="member">
             <img src="images/team1.jpg" alt="">
             <h3>Prayag Ji</h3>
             <p>Adhyaksh</p>
         </div>
-
         <div class="member">
             <img src="images/team2.jpg" alt="">
             <h3>Rathaour ji</h3>
             <p>Advaisar</p>
         </div>
-
         <div class="member">
             <img src="images/team3.jpg" alt="">
             <h3>Vinod Kanaujiya JI</h3>
             <p>Chairman</p>
         </div>
-
         <div class="member">
             <img src="images/team4.jpg" alt="">
             <h3>Ajay Giri Ji</h3>
             <p>Mahamantri</p>
         </div>
-
         <div class="member">
             <img src="images/team5.jpg" alt="">
             <h3>Rajat Gupta ji</h3>
             <p>Sah Mantri</p>
         </div>
-
         <div class="member">
             <img src="images/team6.jpg" alt="">
             <h3>Raju Gaur ji</h3>
             <p>Teraserar</p>
         </div>
-
         <div class="member">
             <img src="images/team7.jpg" alt="">
             <h3>Ashok Gupta Ji</h3>
@@ -132,10 +124,8 @@
 </section>
 
 <!-- ================= MEMBERS ================= -->
-<!-- ================= MEMBERS ================= -->
 <section id="members">
     <h2>Members</h2>
-
     <table class="members-table">
         <thead>
             <tr>
@@ -145,61 +135,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td></td>
-                <td></td>
-            </tr>
+            <tr><td>1</td><td></td><td></td></tr>
+            <tr><td>2</td><td></td><td></td></tr>
+            <tr><td>3</td><td></td><td></td></tr>
+            <tr><td>4</td><td></td><td></td></tr>
+            <tr><td>5</td><td></td><td></td></tr>
+            <tr><td>6</td><td></td><td></td></tr>
+            <tr><td>7</td><td></td><td></td></tr>
+            <tr><td>8</td><td></td><td></td></tr>
+            <tr><td>9</td><td></td><td></td></tr>
+            <tr><td>10</td><td></td><td></td></tr>
+            <tr><td>11</td><td></td><td></td></tr>
         </tbody>
     </table>
 </section>
@@ -223,39 +169,60 @@
 </div>
 
 <script>
+// Lightbox
 function openImage(src) {
     document.getElementById("lightbox").style.display = "flex";
     document.getElementById("lightbox-img").src = src;
 }
-
 function closeImage() {
     document.getElementById("lightbox").style.display = "none";
 }
-
 document.querySelectorAll('.grid img, .member img').forEach(img => {
     img.addEventListener('click', function() {
         openImage(this.src);
     });
 });
-</script>
-<script>
-const bannerImages = [
-    "images/D1.jpg",
-    "images/D2.jpg",
-    "images/D3.jpg",
-    "images/D4.jpg",
-    "images/D5.jpg",
-    "images/D6.jpg"
-];
 
-let currentImage = 0;
-const banner = document.querySelector(".banner");
+// ================= BANNER SLIDER =================
+var currentSlide = 0;
+var totalSlides = 6;
+var sliderInterval;
 
-setInterval(() => {
-    currentImage = (currentImage + 1) % bannerImages.length;
-    banner.style.backgroundImage =
-        `url('${bannerImages[currentImage]}')`;
-}, 4000);
+function goToSlide(index) {
+    currentSlide = index;
+    var track = document.querySelector('.slider-track');
+    track.style.transform = 'translateX(-' + (currentSlide * 100 / 6) + '%)';
+
+    document.querySelectorAll('.dot').forEach(function(dot, i) {
+        dot.classList.toggle('active', i === currentSlide);
+    });
+}
+
+function nextSlide() {
+    goToSlide((currentSlide + 1) % totalSlides);
+}
+
+sliderInterval = setInterval(nextSlide, 4000);
+
+// Pause on hover
+var banner = document.querySelector('.banner');
+banner.addEventListener('mouseenter', function() { clearInterval(sliderInterval); });
+banner.addEventListener('mouseleave', function() { sliderInterval = setInterval(nextSlide, 4000); });
+
+// Touch swipe for mobile
+var touchStartX = 0;
+banner.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+banner.addEventListener('touchend', function(e) {
+    var diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+        clearInterval(sliderInterval);
+        if (diff > 0) { nextSlide(); }
+        else { goToSlide((currentSlide - 1 + totalSlides) % totalSlides); }
+        sliderInterval = setInterval(nextSlide, 4000);
+    }
+}, { passive: true });
 </script>
 
 </body>
