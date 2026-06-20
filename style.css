@@ -381,3 +381,13 @@ footer {
 .sub-dropdown-menu a:hover {
     background: #f5f5f5;
 }
+
+/* ===== 2026 GALLERY CENTER FIX ===== */
+
+.gallery h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #333;
+}
