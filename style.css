@@ -1447,3 +1447,197 @@ footer p:last-child {
         font-size: 13px;
     }
 }
+
+/* ========================================
+   JOIN BUTTON - ORANGE GLOW (NEWLY ADDED)
+   ======================================== */
+.join-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    border-top: 2px solid #ff7b00;
+    border-bottom: 2px solid #ff7b00;
+    margin: 0 30px 20px;
+    border-radius: 20px;
+}
+
+.join-now-btn {
+    display: inline-block;
+    padding: 18px 60px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    background: linear-gradient(135deg, #ff7b00, #ff5500);
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 0 30px rgba(255, 85, 0, 0.6);
+    transition: all 0.4s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.join-now-btn:hover {
+    transform: scale(1.08) translateY(-4px);
+    box-shadow: 0 0 50px rgba(255, 85, 0, 0.9);
+    background: linear-gradient(135deg, #ff8c1a, #ff4400);
+    color: #fff;
+}
+
+/* Responsive for Join Button */
+@media (max-width: 768px) {
+    .join-section {
+        margin: 0 12px 15px;
+        padding: 30px 15px;
+    }
+    .join-now-btn {
+        font-size: 18px;
+        padding: 14px 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-section {
+        margin: 0 8px 10px;
+        padding: 20px 10px;
+    }
+    .join-now-btn {
+        font-size: 15px;
+        padding: 12px 25px;
+        letter-spacing: 1px;
+    }
+}
+
+/* ========================================
+   NEWS TICKER - UPCOMING EVENTS
+   ======================================== */
+.news-ticker {
+    background: linear-gradient(135deg, #0d0d1a, #1a1a2e);
+    padding: 0 20px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid #ff7b00;
+    border-bottom: 2px solid #ff7b00;
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    gap: 20px;
+    box-shadow: 0 4px 30px rgba(255, 123, 0, 0.1);
+}
+
+.news-label {
+    background: linear-gradient(135deg, #ff7b00, #ff5500);
+    color: #fff;
+    font-weight: 700;
+    padding: 6px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 25px rgba(255, 123, 0, 0.4);
+    font-family: 'Poppins', sans-serif;
+}
+
+.news-track {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.news-slider {
+    display: inline-flex;
+    gap: 50px;
+    animation: scrollNews 28s linear infinite;
+    white-space: nowrap;
+}
+
+.news-slider span {
+    color: #e8e8f0;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.news-slider span::before {
+    content: '✦ ';
+    color: #ff7b00;
+    font-weight: 700;
+}
+
+.news-slider span::after {
+    content: ' |';
+    color: #555;
+    margin-left: 50px;
+    opacity: 0.3;
+}
+
+/* Pause on hover */
+.news-ticker:hover .news-slider {
+    animation-play-state: paused;
+}
+
+@keyframes scrollNews {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .news-ticker {
+        height: 44px;
+        padding: 0 12px;
+        gap: 12px;
+    }
+    .news-label {
+        font-size: 11px;
+        padding: 4px 14px;
+        flex-shrink: 0;
+    }
+    .news-slider {
+        gap: 30px;
+        animation-duration: 20s;
+    }
+    .news-slider span {
+        font-size: 13px;
+    }
+    .news-slider span::after {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .news-ticker {
+        height: 38px;
+        padding: 0 8px;
+        gap: 8px;
+    }
+    .news-label {
+        font-size: 10px;
+        padding: 3px 10px;
+        border-radius: 20px;
+    }
+    .news-slider {
+        gap: 20px;
+        animation-duration: 16s;
+    }
+    .news-slider span {
+        font-size: 11px;
+    }
+    .news-slider span::after {
+        margin-left: 20px;
+        content: ' •';
+    }
+}
