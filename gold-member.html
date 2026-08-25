@@ -17,115 +17,60 @@
                 radial-gradient(ellipse at 80% 70%, rgba(255, 215, 0, 0.02) 0%, transparent 50%);
             min-height: 100vh; color: #2d2d2d; overflow-x: hidden;
         }
-        .particles-container {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0; overflow: hidden;
-        }
-        .particle {
-            position: absolute; width: 4px; height: 4px;
-            background: linear-gradient(135deg, #f5a623, #ff6b6b);
-            border-radius: 50%; opacity: 0; animation: floatParticle linear infinite;
-        }
-        .particle:nth-child(1) { left: 5%; animation-duration: 14s; animation-delay: 0s; width: 3px; height: 3px; }
-        .particle:nth-child(2) { left: 12%; animation-duration: 18s; animation-delay: 2s; width: 5px; height: 5px; }
-        .particle:nth-child(3) { left: 20%; animation-duration: 12s; animation-delay: 4s; width: 2px; height: 2px; }
-        .particle:nth-child(4) { left: 28%; animation-duration: 16s; animation-delay: 1s; width: 4px; height: 4px; }
-        .particle:nth-child(5) { left: 35%; animation-duration: 13s; animation-delay: 3s; width: 3px; height: 3px; }
-        .particle:nth-child(6) { left: 42%; animation-duration: 15s; animation-delay: 5s; width: 5px; height: 5px; }
-        .particle:nth-child(7) { left: 50%; animation-duration: 19s; animation-delay: 2s; width: 2px; height: 2px; }
-        .particle:nth-child(8) { left: 58%; animation-duration: 14s; animation-delay: 4s; width: 4px; height: 4px; }
-        .particle:nth-child(9) { left: 65%; animation-duration: 17s; animation-delay: 1s; width: 3px; height: 3px; }
-        .particle:nth-child(10) { left: 72%; animation-duration: 11s; animation-delay: 3s; width: 5px; height: 5px; }
-        .particle:nth-child(11) { left: 80%; animation-duration: 16s; animation-delay: 6s; width: 3px; height: 3px; }
-        .particle:nth-child(12) { left: 88%; animation-duration: 13s; animation-delay: 2s; width: 4px; height: 4px; }
-        .particle:nth-child(13) { left: 95%; animation-duration: 15s; animation-delay: 4s; width: 2px; height: 2px; }
-        .particle:nth-child(14) { left: 45%; animation-duration: 20s; animation-delay: 7s; width: 5px; height: 5px; }
-        .particle:nth-child(15) { left: 75%; animation-duration: 14s; animation-delay: 5s; width: 3px; height: 3px; }
-        @keyframes floatParticle {
-            0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 0; }
-            10% { opacity: 0.8; } 90% { opacity: 0.8; }
-            100% { transform: translateY(-10vh) rotate(720deg) scale(1); opacity: 0; }
-        }
-        .floating-shapes {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: 0; overflow: hidden;
-        }
-        .shape { position: absolute; border-radius: 50%; opacity: 0.04; animation: floatShape ease-in-out infinite alternate; }
-        .shape:nth-child(1) { width: 400px; height: 400px; background: radial-gradient(circle, #f5a623, transparent); top: -150px; right: -150px; animation-duration: 25s; }
-        .shape:nth-child(2) { width: 500px; height: 500px; background: radial-gradient(circle, #ff6b6b, transparent); bottom: -200px; left: -200px; animation-duration: 30s; animation-delay: 3s; }
-        .shape:nth-child(3) { width: 300px; height: 300px; background: radial-gradient(circle, #f5a623, transparent); top: 50%; left: 50%; transform: translate(-50%, -50%); animation-duration: 35s; animation-delay: 6s; }
-        @keyframes floatShape {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            33% { transform: translate(40px, -40px) scale(1.1) rotate(120deg); }
-            66% { transform: translate(-30px, 30px) scale(0.9) rotate(240deg); }
-            100% { transform: translate(20px, -20px) scale(1.05) rotate(360deg); }
-        }
-        .header {
-            height: 80px; background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(20px);
-            display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
-            border-bottom: 2px solid rgba(255, 215, 0, 0.2); position: sticky; top: 0; z-index: 9999;
-            box-shadow: 0 2px 40px rgba(0, 0, 0, 0.06);
-        }
-        .header::after {
-            content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px;
-            background: linear-gradient(90deg, transparent, #f5a623, #ff6b6b, #f5a623, transparent);
-            animation: shimmerGold 4s ease-in-out infinite; background-size: 300% 100%;
-        }
-        @keyframes shimmerGold { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-        .left { display: flex; align-items: center; gap: 18px; }
-        .logo { height: 52px; width: auto; border-radius: 50%; border: 2px solid #f5a623; padding: 3px; background: #fff; box-shadow: 0 2px 20px rgba(245, 166, 35, 0.15); }
-        .brand { font-size: 22px; font-weight: 700; color: #1a1a2e; letter-spacing: 1.5px; font-family: 'Playfair Display', serif; }
-        .brand .highlight { background: linear-gradient(135deg, #f5a623, #e8890c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 900; }
-        .brand::after { content: '✦'; color: #f5a623; font-size: 12px; margin-left: 8px; opacity: 0.6; display: inline-block; animation: spinStar 8s linear infinite; }
-        @keyframes spinStar { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.3); } 100% { transform: rotate(360deg) scale(1); } }
-        .back-btn {
-            text-decoration: none; color: #4a4a5a; font-weight: 500; font-size: 14px;
-            padding: 10px 24px; border-radius: 8px; background: rgba(245, 166, 35, 0.06);
-            border: 1px solid rgba(245, 166, 35, 0.15); transition: all 0.4s ease;
-        }
-        .back-btn:hover { color: #f5a623; background: rgba(245, 166, 35, 0.12); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(245, 166, 35, 0.1); border-color: #f5a623; }
-        .main-content {
-            padding: 60px 40px; margin: 30px 30px; background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.04); position: relative; text-align: center;
-        }
-        .main-content::before {
-            content: ''; position: absolute; top: -1px; left: 15%; right: 15%; height: 2px;
-            background: linear-gradient(90deg, transparent, #f5a623, #ff6b6b, #f5a623, transparent); border-radius: 2px;
-        }
-        .main-content::after {
-            content: '◆'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-            color: #f5a623; font-size: 16px; background: #f8f6f3; padding: 0 12px;
-        }
-        h1 { font-size: 42px; font-weight: 700; font-family: 'Playfair Display', serif; color: #1a1a2e; display: inline-block; padding-bottom: 15px; margin-bottom: 20px; position: relative; }
-        h1::after {
-            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 100px; height: 3px; background: linear-gradient(90deg, transparent, #f5a623, #ff6b6b, #f5a623, transparent); border-radius: 2px;
-        }
-        .gold-badge {
-            display: inline-block; background: linear-gradient(135deg, #f5a623, #e8890c);
-            color: white; padding: 8px 30px; border-radius: 50px; font-weight: 600; font-size: 14px;
-            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 15px; box-shadow: 0 4px 20px rgba(245, 166, 35, 0.3);
-        }
-        .subtitle { color: #4a4a5a; font-size: 18px; font-weight: 300; margin-bottom: 30px; }
-        .table-container { max-width: 900px; margin: 30px auto; overflow-x: auto; border-radius: 16px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04); }
-        table { width: 100%; border-collapse: collapse; background: rgba(255, 255, 255, 0.9); border-radius: 16px; overflow: hidden; }
-        thead { background: linear-gradient(135deg, #f5a623, #e8890c); }
-        th { padding: 16px 20px; color: #fff; font-weight: 600; font-size: 16px; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
-        td { padding: 14px 20px; border-bottom: 1px solid rgba(0, 0, 0, 0.04); color: #2d2d2d; font-size: 15px; text-align: left; }
-        tr:hover { background: rgba(245, 166, 35, 0.04); }
-        td:first-child { font-weight: 600; color: #1a1a2e; width: 80px; }
-        .hindi { display: block; font-size: 12px; color: #8a8a9a; margin-top: 3px; font-weight: 300; }
-        footer { background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), #f8f6f3); text-align: center; padding: 30px 20px; margin-top: 30px; border-top: 1px solid rgba(0, 0, 0, 0.04); }
-        footer p { color: #8a8a9a; font-size: 15px; }
-        footer p:last-child { font-size: 12px; margin-top: 6px; color: #c4c4c4; }
-        @media (max-width: 768px) {
-            .header { height: 70px; padding: 0 20px; }
-            .logo { height: 42px; } .brand { font-size: 16px; }
-            .particles-container, .floating-shapes { display: none; }
-            .main-content { padding: 40px 18px; margin: 15px 12px; }
-            h1 { font-size: 28px; } th, td { padding: 12px 14px; font-size: 13px; }
-        }
+        .particles-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .particle{position:absolute;width:4px;height:4px;background:linear-gradient(135deg,#f5a623,#ff6b6b);border-radius:50%;opacity:0;animation:floatParticle linear infinite}
+        .particle:nth-child(1){left:5%;animation-duration:14s;animation-delay:0s;width:3px;height:3px}
+        .particle:nth-child(2){left:12%;animation-duration:18s;animation-delay:2s;width:5px;height:5px}
+        .particle:nth-child(3){left:20%;animation-duration:12s;animation-delay:4s;width:2px;height:2px}
+        .particle:nth-child(4){left:28%;animation-duration:16s;animation-delay:1s;width:4px;height:4px}
+        .particle:nth-child(5){left:35%;animation-duration:13s;animation-delay:3s;width:3px;height:3px}
+        .particle:nth-child(6){left:42%;animation-duration:15s;animation-delay:5s;width:5px;height:5px}
+        .particle:nth-child(7){left:50%;animation-duration:19s;animation-delay:2s;width:2px;height:2px}
+        .particle:nth-child(8){left:58%;animation-duration:14s;animation-delay:4s;width:4px;height:4px}
+        .particle:nth-child(9){left:65%;animation-duration:17s;animation-delay:1s;width:3px;height:3px}
+        .particle:nth-child(10){left:72%;animation-duration:11s;animation-delay:3s;width:5px;height:5px}
+        .particle:nth-child(11){left:80%;animation-duration:16s;animation-delay:6s;width:3px;height:3px}
+        .particle:nth-child(12){left:88%;animation-duration:13s;animation-delay:2s;width:4px;height:4px}
+        .particle:nth-child(13){left:95%;animation-duration:15s;animation-delay:4s;width:2px;height:2px}
+        .particle:nth-child(14){left:45%;animation-duration:20s;animation-delay:7s;width:5px;height:5px}
+        .particle:nth-child(15){left:75%;animation-duration:14s;animation-delay:5s;width:3px;height:3px}
+        @keyframes floatParticle{0%{transform:translateY(100vh) rotate(0deg) scale(0);opacity:0}10%{opacity:.8}90%{opacity:.8}100%{transform:translateY(-10vh) rotate(720deg) scale(1);opacity:0}}
+        .floating-shapes{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
+        .shape{position:absolute;border-radius:50%;opacity:.04;animation:floatShape ease-in-out infinite alternate}
+        .shape:nth-child(1){width:400px;height:400px;background:radial-gradient(circle,#f5a623,transparent);top:-150px;right:-150px;animation-duration:25s}
+        .shape:nth-child(2){width:500px;height:500px;background:radial-gradient(circle,#ff6b6b,transparent);bottom:-200px;left:-200px;animation-duration:30s;animation-delay:3s}
+        .shape:nth-child(3){width:300px;height:300px;background:radial-gradient(circle,#f5a623,transparent);top:50%;left:50%;transform:translate(-50%,-50%);animation-duration:35s;animation-delay:6s}
+        @keyframes floatShape{0%{transform:translate(0,0) scale(1) rotate(0deg)}33%{transform:translate(40px,-40px) scale(1.1) rotate(120deg)}66%{transform:translate(-30px,30px) scale(.9) rotate(240deg)}100%{transform:translate(20px,-20px) scale(1.05) rotate(360deg)}}
+        .header{height:80px;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);display:flex;justify-content:space-between;align-items:center;padding:0 40px;border-bottom:2px solid rgba(255,215,0,.2);position:sticky;top:0;z-index:9999;box-shadow:0 2px 40px rgba(0,0,0,.06)}
+        .header::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#f5a623,#ff6b6b,#f5a623,transparent);animation:shimmerGold 4s ease-in-out infinite;background-size:300% 100%}
+        @keyframes shimmerGold{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+        .left{display:flex;align-items:center;gap:18px}
+        .logo{height:52px;width:auto;display:block;border-radius:50%;border:2px solid #f5a623;padding:3px;background:#fff;box-shadow:0 2px 20px rgba(245,166,35,.15)}
+        .brand{font-size:22px;font-weight:700;color:#1a1a2e;letter-spacing:1.5px;font-family:'Playfair Display',serif}
+        .brand .highlight{background:linear-gradient(135deg,#f5a623,#e8890c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:900}
+        .brand::after{content:'✦';color:#f5a623;font-size:12px;margin-left:8px;opacity:.6;display:inline-block;animation:spinStar 8s linear infinite}
+        @keyframes spinStar{0%{transform:rotate(0deg) scale(1)}50%{transform:rotate(180deg) scale(1.3)}100%{transform:rotate(360deg) scale(1)}}
+        .back-btn{text-decoration:none;color:#4a4a5a;font-weight:500;font-size:14px;padding:10px 24px;border-radius:8px;background:rgba(245,166,35,.06);border:1px solid rgba(245,166,35,.15);transition:all .4s ease}
+        .back-btn:hover{color:#f5a623;background:rgba(245,166,35,.12);transform:translateY(-2px);box-shadow:0 8px 30px rgba(245,166,35,.1);border-color:#f5a623}
+        .main-content{padding:60px 40px;margin:30px 30px;background:rgba(255,255,255,.7);backdrop-filter:blur(10px);border-radius:20px;border:1px solid rgba(255,255,255,.8);box-shadow:0 4px 40px rgba(0,0,0,.04);position:relative;text-align:center}
+        .main-content::before{content:'';position:absolute;top:-1px;left:15%;right:15%;height:2px;background:linear-gradient(90deg,transparent,#f5a623,#ff6b6b,#f5a623,transparent);border-radius:2px}
+        .main-content::after{content:'◆';position:absolute;top:-10px;left:50%;transform:translateX(-50%);color:#f5a623;font-size:16px;background:#f8f6f3;padding:0 12px}
+        h1{font-size:42px;font-weight:700;font-family:'Playfair Display',serif;color:#1a1a2e;display:inline-block;padding-bottom:15px;margin-bottom:20px;position:relative}
+        h1::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100px;height:3px;background:linear-gradient(90deg,transparent,#f5a623,#ff6b6b,#f5a623,transparent);border-radius:2px}
+        .gold-badge{display:inline-block;background:linear-gradient(135deg,#f5a623,#e8890c);color:#fff;padding:8px 30px;border-radius:50px;font-weight:600;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:15px;box-shadow:0 4px 20px rgba(245,166,35,.3)}
+        .subtitle{color:#4a4a5a;font-size:18px;font-weight:300;margin-bottom:30px}
+        .table-container{max-width:900px;margin:30px auto;overflow-x:auto;border-radius:16px;box-shadow:0 4px 30px rgba(0,0,0,.04)}
+        table{width:100%;border-collapse:collapse;background:rgba(255,255,255,.9);border-radius:16px;overflow:hidden}
+        thead{background:linear-gradient(135deg,#f5a623,#e8890c)}
+        th{padding:16px 20px;color:#fff;font-weight:600;font-size:15px;letter-spacing:1px;text-transform:uppercase;text-align:left}
+        td{padding:14px 20px;border-bottom:1px solid rgba(0,0,0,.04);color:#2d2d2d;font-size:15px;text-align:left}
+        tr:hover{background:rgba(245,166,35,.04)}
+        td:first-child{font-weight:600;color:#1a1a2e;width:70px}
+        .hindi{display:block;font-size:12px;color:#8a8a9a;margin-top:3px;font-weight:300}
+        .phone{font-weight:500;color:#e8890c;white-space:nowrap}
+        footer{background:linear-gradient(180deg,rgba(255,255,255,.95),#f8f6f3);text-align:center;padding:30px 20px;margin-top:30px;border-top:1px solid rgba(0,0,0,.04)}
+        footer p{color:#8a8a9a;font-size:15px}
+        @media(max-width:768px){.header{height:70px;padding:0 20px}.logo{height:42px}.brand{font-size:16px}.particles-container,.floating-shapes{display:none}.main-content{padding:40px 18px;margin:15px 12px}h1{font-size:28px}th,td{padding:12px 14px;font-size:13px}}
     </style>
 </head>
 <body>
@@ -143,62 +88,88 @@
 <div class="main-content">
     <div class="gold-badge">⭐ Gold Members</div>
     <h1>Gold Member</h1>
-    <p class="subtitle">Our distinguished gold members (25-73)</p>
+    <p class="subtitle">Gold Members List with Contact Numbers</p>
+
     <div class="table-container">
         <table>
             <thead>
-                <tr><th>S.No</th><th>Name</th></tr>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Phone No.</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>25</td><td>Nirmala <span class="hindi">(निर्मला)</span></td></tr>
-                <tr><td>26</td><td>Ravi <span class="hindi">(रवि)</span></td></tr>
-                <tr><td>27</td><td>Mohan Mishra <span class="hindi">(मोहन मिश्रा)</span></td></tr>
-                <tr><td>28</td><td>Dharmendra Kumar Sharma <span class="hindi">(धर्मेंद्र कुमार शर्मा)</span></td></tr>
-                <tr><td>29</td><td>Gopal <span class="hindi">(गोपाल)</span></td></tr>
-                <tr><td>30</td><td>Shailendra Shrivastava <span class="hindi">(शैलेन्द्र श्रीवास्तव)</span></td></tr>
-                <tr><td>31</td><td>Harsh <span class="hindi">(हर्ष)</span></td></tr>
-                <tr><td>32</td><td>Ramesh Chand <span class="hindi">(रमेश चन्द)</span></td></tr>
-                <tr><td>33</td><td>Aman <span class="hindi">(अमन)</span></td></tr>
-                <tr><td>34</td><td>Shivam Sharma <span class="hindi">(शिवम शर्मा)</span></td></tr>
-                <tr><td>35</td><td>C.B. Mishra <span class="hindi">(सी०बी० मिश्रा)</span></td></tr>
-                <tr><td>36</td><td>Dhawal Studio <span class="hindi">(धावल स्टूडियो)</span></td></tr>
-                <tr><td>37</td><td>Ajay Nishad <span class="hindi">(अजय निषाद)</span></td></tr>
-                <tr><td>38</td><td>Abhishek <span class="hindi">(अभिषेक)</span></td></tr>
-                <tr><td>39</td><td>Mohit Kashyap <span class="hindi">(मोहित कश्यप)</span></td></tr>
-                <tr><td>40</td><td>Govind Tiwari <span class="hindi">(गोविन्द तिवारी)</span></td></tr>
-                <tr><td>41</td><td>Shiv Pratap Singh <span class="hindi">(शिव प्रताप सिंह)</span></td></tr>
-                <tr><td>42</td><td>Babli <span class="hindi">(बबली)</span></td></tr>
-                <tr><td>43</td><td>Himanshu Savita <span class="hindi">(हिमांशु सविता)</span></td></tr>
-                <tr><td>44</td><td>Ram Ji Pal <span class="hindi">(राम जी पाल)</span></td></tr>
-                <tr><td>45</td><td>Sudhanshu <span class="hindi">(सुधांशु)</span></td></tr>
-                <tr><td>46</td><td>Akhilesh Kumar <span class="hindi">(अखिलेश कुमार)</span></td></tr>
-                <tr><td>47</td><td>Sarvesh Kumar <span class="hindi">(सर्वेश कुमार)</span></td></tr>
-                <tr><td>48</td><td>Kamlesh Kumar <span class="hindi">(कमलेश कुमार)</span></td></tr>
-                <tr><td>49</td><td>Rohit Kumar <span class="hindi">(रोहित कुमार)</span></td></tr>
-                <tr><td>50</td><td>Prabhat Singh <span class="hindi">(प्रभात सिंह)</span></td></tr>
-                <tr><td>51</td><td>Suneet Kumar <span class="hindi">(सुनीत कुमार)</span></td></tr>
-                <tr><td>52</td><td>Aakash Prajapati <span class="hindi">(आकाश प्रजापति)</span></td></tr>
-                <tr><td>53</td><td>Rajat Katiyar <span class="hindi">(रजत कटियार)</span></td></tr>
-                <tr><td>54</td><td>Prakhar Katiyar <span class="hindi">(प्रखर कटियार)</span></td></tr>
-                <tr><td>55</td><td>Vimal Kumar <span class="hindi">(विमल कुमार)</span></td></tr>
-                <tr><td>56</td><td>Sushil Kumar Yadav <span class="hindi">(सुशील कुमार यादव)</span></td></tr>
-                <tr><td>57</td><td>Nikesh Kumar <span class="hindi">(निकेश कुमार)</span></td></tr>
-                <tr><td>58</td><td>Anoop Rathore <span class="hindi">(अनूप राठौर)</span></td></tr>
-                <tr><td>59</td><td>Avinash Katiyar <span class="hindi">(अविनाश कटियार)</span></td></tr>
-                <tr><td>60</td><td>Lavkush Awasthi <span class="hindi">(लवकुश अवस्थी)</span></td></tr>
-                <tr><td>61</td><td>Dinesh Gupta <span class="hindi">(दिनेश गुप्ता)</span></td></tr>
-                <tr><td>62</td><td>Naresh Shukla <span class="hindi">(नरेश शुक्ला)</span></td></tr>
-                <tr><td>63</td><td>Atul Katiyar <span class="hindi">(अतुल कटियार)</span></td></tr>
-                <tr><td>64</td><td>Ritesh Kumar Katiyar <span class="hindi">(रितेश कुमार कटियार)</span></td></tr>
-                <tr><td>65</td><td>Somnath Verma <span class="hindi">(सोमनाथ वर्मा)</span></td></tr>
-                <tr><td>66</td><td>Ram Ji <span class="hindi">(राम जी)</span></td></tr>
-                <tr><td>67</td><td>Aqeel Ahmad <span class="hindi">(अकील अहमद)</span></td></tr>
-                <tr><td>68</td><td>Raghu Varishya <span class="hindi">(रघु वरीश्या)</span></td></tr>
-                <tr><td>69</td><td>V. Sparsh <span class="hindi">(वी स्पर्श)</span></td></tr>
-                <tr><td>70</td><td>Virendra Kumar <span class="hindi">(विरेन्द्र कुमार)</span></td></tr>
-                <tr><td>71</td><td>Harinand <span class="hindi">(हरिनन्द)</span></td></tr>
-                <tr><td>72</td><td>Mohit Kumar <span class="hindi">(मोहित कुमार)</span></td></tr>
-                <tr><td>73</td><td>Sanjay Sagar <span class="hindi">(संजय सागर)</span></td></tr>
+                <tr><td>1</td><td>Mohan <span class="hindi">(मोहन)</span></td><td class="phone">9646187657</td></tr>
+                <tr><td>2</td><td>Rakesh Dixit <span class="hindi">(राकेश दीक्षित)</span></td><td class="phone">9935427289</td></tr>
+                <tr><td>3</td><td>Satyam <span class="hindi">(सत्यम)</span></td><td class="phone">7518206630</td></tr>
+                <tr><td>4</td><td>Shiva Yadav <span class="hindi">(शिवा यादव)</span></td><td class="phone">9695511180</td></tr>
+                <tr><td>5</td><td>Vikram Rawat <span class="hindi">(विक्रम रावत)</span></td><td class="phone">8090662023</td></tr>
+                <tr><td>6</td><td>Manjeet Kashyap <span class="hindi">(मनजीत कश्यप)</span></td><td class="phone">8896188909</td></tr>
+                <tr><td>7</td><td>Debu Rawat <span class="hindi">(देबू रावत)</span></td><td class="phone">9305261038</td></tr>
+                <tr><td>8</td><td>Rajkumar <span class="hindi">(राजकुमार)</span></td><td class="phone">9044235612</td></tr>
+                <tr><td>9</td><td>Paritosh <span class="hindi">(परितोष)</span></td><td class="phone">9935124826</td></tr>
+                <tr><td>10</td><td>Anoop Kumar <span class="hindi">(अनूप कुमार)</span></td><td class="phone">9125534502</td></tr>
+                <tr><td>11</td><td>Deepak <span class="hindi">(दीपक)</span></td><td class="phone">8887596429</td></tr>
+                <tr><td>12</td><td>Raju Chaurasia <span class="hindi">(राजू चौरसिया)</span></td><td class="phone">9335830756</td></tr>
+                <tr><td>13</td><td>Vikas Gupta <span class="hindi">(विकास गुप्ता)</span></td><td class="phone">9935606421</td></tr>
+                <tr><td>14</td><td>Suresh Kumar <span class="hindi">(सुरेश कुमार)</span></td><td class="phone">9793179828</td></tr>
+                <tr><td>15</td><td>Shivam <span class="hindi">(शिवम)</span></td><td class="phone">9936681545</td></tr>
+                <tr><td>16</td><td>Deenanath Sharma <span class="hindi">(दीनानाथ शर्मा)</span></td><td class="phone">9559663066</td></tr>
+                <tr><td>17</td><td>Jatin <span class="hindi">(जतिन)</span></td><td class="phone">9369168050</td></tr>
+                <tr><td>18</td><td>Anil <span class="hindi">(अनिल)</span></td><td class="phone">9935948181</td></tr>
+                <tr><td>19</td><td>C.L. Kanojia <span class="hindi">(सी एल कनौजिया)</span></td><td class="phone">9026426840</td></tr>
+                <tr><td>20</td><td>Sonu Gupta <span class="hindi">(सोनू गुप्ता)</span></td><td class="phone">8765247085</td></tr>
+                <tr><td>21</td><td>Arun Kashyap <span class="hindi">(अरुण कश्यप)</span></td><td class="phone">9369862946</td></tr>
+                <tr><td>22</td><td>Nirmala <span class="hindi">(निर्मला)</span></td><td class="phone">7499708729</td></tr>
+                <tr><td>23</td><td>Ravi <span class="hindi">(रवि)</span></td><td class="phone">9369423173</td></tr>
+                <tr><td>24</td><td>Mohan Mishra <span class="hindi">(मोहन मिश्रा)</span></td><td class="phone">7523962221</td></tr>
+                <tr><td>25</td><td>Dharmendra Kumar Sharma <span class="hindi">(धर्मेंद्र कुमार शर्मा)</span></td><td class="phone">9319799068</td></tr>
+                <tr><td>26</td><td>Gopal <span class="hindi">(गोपाल)</span></td><td class="phone">9616399000</td></tr>
+                <tr><td>27</td><td>Shailendra Shrivastava <span class="hindi">(शैलेन्द्र श्रीवास्तव)</span></td><td class="phone">8840125402</td></tr>
+                <tr><td>28</td><td>Harsh <span class="hindi">(हर्ष)</span></td><td class="phone">8112313741</td></tr>
+                <tr><td>29</td><td>Ramesh Chand <span class="hindi">(रमेश चन्द)</span></td><td class="phone">9956767121</td></tr>
+                <tr><td>30</td><td>Aman <span class="hindi">(अमन)</span></td><td class="phone">8881957652</td></tr>
+                <tr><td>31</td><td>Shivam Sharma <span class="hindi">(शिवम शर्मा)</span></td><td class="phone">8726921253</td></tr>
+                <tr><td>32</td><td>C.B. Mishra <span class="hindi">(सी०बी० मिश्रा)</span></td><td class="phone">9936164686</td></tr>
+                <tr><td>33</td><td>Dhawal Studio <span class="hindi">(धावल स्टूडियो)</span></td><td class="phone">9889336627</td></tr>
+                <tr><td>34</td><td>Ajay Nishad <span class="hindi">(अजय निषाद)</span></td><td class="phone">9410136344</td></tr>
+                <tr><td>35</td><td>Abhishek <span class="hindi">(अभिषेक)</span></td><td class="phone">8869939491</td></tr>
+                <tr><td>36</td><td>Mohit Kashyap <span class="hindi">(मोहित कश्यप)</span></td><td class="phone">8781001290</td></tr>
+                <tr><td>37</td><td>Govind Tiwari <span class="hindi">(गोविन्द तिवारी)</span></td><td class="phone">9919286465</td></tr>
+                <tr><td>38</td><td>Shiv Pratap Singh <span class="hindi">(शिव प्रताप सिंह)</span></td><td class="phone">9236895452</td></tr>
+                <tr><td>39</td><td>Babli <span class="hindi">(बबली)</span></td><td class="phone">9935559820</td></tr>
+                <tr><td>40</td><td>Himanshu Savita <span class="hindi">(हिमांशु सविता)</span></td><td class="phone">6993102400</td></tr>
+                <tr><td>41</td><td>Ram Ji Pal <span class="hindi">(राम जी पाल)</span></td><td class="phone">955948019</td></tr>
+                <tr><td>42</td><td>Sudhanshu <span class="hindi">(सुधांशु)</span></td><td class="phone">6394444170</td></tr>
+                <tr><td>43</td><td>Akhilesh Kumar <span class="hindi">(अखिलेश कुमार)</span></td><td class="phone">7388067213</td></tr>
+                <tr><td>44</td><td>Sarvesh Kumar <span class="hindi">(सर्वेश कुमार)</span></td><td class="phone">9695331055</td></tr>
+                <tr><td>45</td><td>Kamlesh Kumar <span class="hindi">(कमलेश कुमार)</span></td><td class="phone">8887956742</td></tr>
+                <tr><td>46</td><td>Rohit Kumar <span class="hindi">(रोहित कुमार)</span></td><td class="phone">8081439013</td></tr>
+                <tr><td>47</td><td>Prabhat Singh <span class="hindi">(प्रभात सिंह)</span></td><td class="phone">8317089336</td></tr>
+                <tr><td>48</td><td>Suneet Kumar <span class="hindi">(सुनीत कुमार)</span></td><td class="phone">6993631495</td></tr>
+                <tr><td>49</td><td>Aakash Prajapati <span class="hindi">(आकाश प्रजापति)</span></td><td class="phone">8726651180</td></tr>
+                <tr><td>50</td><td>Rajat Katiyar <span class="hindi">(रजत कटियार)</span></td><td class="phone">7355791129</td></tr>
+                <tr><td>51</td><td>Prakhar Katiyar <span class="hindi">(प्रखर कटियार)</span></td><td class="phone">7080407386</td></tr>
+                <tr><td>52</td><td>Vimal Kumar <span class="hindi">(विमल कुमार)</span></td><td class="phone">9005751347</td></tr>
+                <tr><td>53</td><td>Sushil Kumar Yadav <span class="hindi">(सुशील कुमार यादव)</span></td><td class="phone">9415732064</td></tr>
+                <tr><td>54</td><td>Nikesh Kumar <span class="hindi">(निकेश कुमार)</span></td><td class="phone">9919812525</td></tr>
+                <tr><td>55</td><td>Anoop Rathore <span class="hindi">(अनूप राठौर)</span></td><td class="phone">9653090724</td></tr>
+                <tr><td>56</td><td>Avinash Katiyar <span class="hindi">(अविनाश कटियार)</span></td><td class="phone">9793022421</td></tr>
+                <tr><td>57</td><td>Lavkush Awasthi <span class="hindi">(लवकुश अवस्थी)</span></td><td class="phone">9598371762</td></tr>
+                <tr><td>58</td><td>Dinesh Gupta <span class="hindi">(दिनेश गुप्ता)</span></td><td class="phone">9450157122</td></tr>
+                <tr><td>59</td><td>Naresh Shukla <span class="hindi">(नरेश शुक्ला)</span></td><td class="phone">9839262455</td></tr>
+                <tr><td>60</td><td>Atul Katiyar <span class="hindi">(अतुल कटियार)</span></td><td class="phone">9889856599</td></tr>
+                <tr><td>61</td><td>Ritesh Kumar Katiyar <span class="hindi">(रितेश कुमार कटियार)</span></td><td class="phone">9919762068</td></tr>
+                <tr><td>62</td><td>Somnath Verma <span class="hindi">(सोमनाथ वर्मा)</span></td><td class="phone">9793886556</td></tr>
+                <tr><td>63</td><td>Ram Ji <span class="hindi">(राम जी)</span></td><td class="phone">9794332755</td></tr>
+                <tr><td>64</td><td>Aqeel Ahmad <span class="hindi">(अकील अहमद)</span></td><td class="phone">9369643366</td></tr>
+                <tr><td>65</td><td>Raghu Varishya <span class="hindi">(रघु वरीश्या)</span></td><td class="phone">9616380110</td></tr>
+                <tr><td>66</td><td>V. Sparsh <span class="hindi">(वी स्पर्श)</span></td><td class="phone">7054744081</td></tr>
+                <tr><td>67</td><td>Virendra Kumar <span class="hindi">(विरेन्द्र कुमार)</span></td><td class="phone">9935343300</td></tr>
+                <tr><td>68</td><td>Harinand <span class="hindi">(हरिनन्द)</span></td><td class="phone">7860162187</td></tr>
+                <tr><td>69</td><td>Mohit Kumar <span class="hindi">(मोहित कुमार)</span></td><td class="phone">7881186676</td></tr>
+                <tr><td>70</td><td>Sanjay Sagar <span class="hindi">(संजय सागर)</span></td><td class="phone">8840308740</td></tr>
             </tbody>
         </table>
     </div>
@@ -208,5 +179,6 @@
     <p>© 2026 Photographers Association Kanpur | All Rights Reserved</p>
     <p>✦ Crafted with Excellence ✦</p>
 </footer>
+
 </body>
 </html>
